@@ -1,10 +1,11 @@
 import React from 'react'
+import Main from './layourts/main'
 
 function App() {
 
   return (
     <>
-      <h1>Message de bienvenue</h1>
+      <Main/>
     </>
   )
 }
