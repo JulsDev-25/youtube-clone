@@ -16,7 +16,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Avatar from '../Avatar';
 import { Button } from '@mui/material';
-import { Add, Mic, RecordVoiceOverRounded, VoiceChatRounded } from '@mui/icons-material';
+import { Add, Mic} from '@mui/icons-material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
