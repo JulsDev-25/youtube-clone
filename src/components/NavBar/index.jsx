@@ -31,7 +31,6 @@ const Search = styled('div')(({ theme }) => ({
   borderBlockWidth: '1px',
   borderBlockStyle: 'solid',
   borderBlockColor: 'rgba(0, 0, 0, 0.2)',
-  borderTopLeftRadius: '50px',
 }));
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
@@ -140,7 +139,7 @@ const NavBar = ({setOpenDrawer, openDrawer}) => {
   );
 
   return (
-    <Box sx={{ flexGrow: 1, m: 0, p: 0 }}>
+    <Box sx={{ flexGrow: 1, m: 0, p: 0, position: 'sticky', top: 0, zIndex: 100 }}>
       <AppBar position="relative" sx={{ backgroundColor: '#fff', color: 'black', boxShadow: 'none', p: 0, m: 0 }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           {/*logo section */}
