@@ -140,7 +140,7 @@ const NavBar = ({setOpenDrawer, openDrawer}) => {
 
   return (
     <Box sx={{ flexGrow: 1, m: 0, p: 0, position: 'sticky', top: 0, zIndex: 100 }}>
-      <AppBar position="relative" sx={{ backgroundColor: '#fff', color: 'black', boxShadow: 'none', p: 0, m: 0 }}>
+      <AppBar position="relative" sx={{ backgroundColor: '#fffc', backdropFilter: 'blur(10px)', color: 'black', boxShadow: 'none', p: 0, m: 0 }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           {/*logo section */}
           <Box sx={{display: 'flex', alignItems: 'center', marginRight: '20px'}}>

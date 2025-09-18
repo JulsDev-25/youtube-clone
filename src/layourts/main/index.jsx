@@ -279,12 +279,12 @@ const Main = () => {
             <Box sx={{ display: 'flex', }}>
                 <SideBar open={openDrawer} sideBarRef={sideBarRef} />
                 <Box component="main" sx={{ flexGrow: 1, px: 3, overflow: "hidden" }}>
-                  <Box sx={{width: `calc(100% - ${sideBarwidth}px - 48px)`, position: 'fixed', top: '64px', backgroundColor: '#fff'}} >
+                  <Box sx={{width: `calc(100% - ${sideBarwidth}px - 48px)`, position: 'fixed', top: '64px', backgroundColor: '#fffc', backdropFilter: 'blur(10px)'}} >
                     <TabFilter />
                   </Box>
                   
                   {/* First section video card */}
-                  <Grid container spacing={2}>
+                  <Grid container spacing={2} sx={{ mt: '50px'}}>
                     {Videos.map((video, index) => (
                       <VideoCard 
                         key={index}
