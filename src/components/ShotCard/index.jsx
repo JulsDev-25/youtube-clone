@@ -8,7 +8,7 @@ import shotCardImgage from '../../assets/img/hq720.webp'
 import { DoNotDisturb, Feedback, PlaylistPlay } from '@mui/icons-material';
 
 
-const ShotCard = () => {
+const ShotCard = ({miniature, titre, description, vues}) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -25,9 +25,9 @@ const ShotCard = () => {
     <Grid >
       <CardMedia
         component="img"
-        image={shotCardImgage}
-        alt="Paella dish"
-        sx={{ aspectRatio: '10/16', borderRadius: "10px" }}
+        image={miniature}
+        alt="shot miniature"
+        sx={{ aspectRatio: '10/16', borderRadius: "10px", cursor: 'pointer'}}
       />
       <CardHeader
         action={
@@ -55,8 +55,8 @@ const ShotCard = () => {
             </Menu>
           </>
         }
-        title={<Typography variant="body1" fontWeight={550} mb={0.5}>dfsdfsfd </Typography>}
-        subheader="124 k vues"
+        title={<Typography variant="body1" fontWeight={550} mb={0.5}>{titre} </Typography>}
+        subheader={vues}
       />
     </Grid>
   );
