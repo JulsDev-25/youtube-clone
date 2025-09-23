@@ -1,12 +1,24 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Box, Grid, IconButton } from '@mui/material';
+import { Box, Grid, IconButton, Menu, MenuItem } from '@mui/material';
 import Avatar from '../Avatar';
-import { MoreVert } from '@mui/icons-material';
+import { AccessTime, DoNotDisturb, DoNotDisturbOn, Feedback, MoreVert, OutlinedFlag, PlaylistPlay, Replay, TurnedInNot } from '@mui/icons-material';
 
 const VideoCard = ({miniature, titre, description, auteur, durée, vues, date, ...props}) => {
+  const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+  
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    }
+  
+    const handleClose = () => {
+      setAnchorEl(null)
+    }
+
+
   return (
     <Grid size={{xs:12, sm:6, md:6, lg:4}} {...props}>
       <CardMedia
@@ -22,9 +34,44 @@ const VideoCard = ({miniature, titre, description, auteur, durée, vues, date, .
             <Typography variant="body2" color="text.secondary">{auteur.nom} </Typography>
             <Typography variant="body2" color="text.secondary">{vues} vues • il y a {date}</Typography>
           </Box>
-          <IconButton sx={{height: 40, width: 40, mr: '-10px', mt: '-10px'}}>
+          <IconButton onClick={handleClick} sx={{height: 40, width: 40, mr: '-10px', mt: '-10px'}}>
             <MoreVert />
           </IconButton>
+          <Menu
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}  
+            >
+              <MenuItem onClick={handleClose} sx={{ display: 'flex', alignItems: 'top', gap: '10px' }}>
+                <PlaylistPlay />
+                <Typography variant="body2" >Ajouter à la file d'attente</Typography>
+              </MenuItem >
+              <MenuItem onClick={handleClose} sx={{ display: 'flex', alignItems: 'top', gap: '10px' }}>
+                <AccessTime />
+                <Typography variant="body2" >Enregistrer dans "A regarder plus tard" </Typography>
+              </MenuItem>
+              <MenuItem onClick={handleClose} sx={{ display: 'flex', alignItems: 'top', gap: '10px' }}>
+                <TurnedInNot />
+                <Typography variant="body2" >Enregistrer dans une playlist</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleClose} sx={{ display: 'flex', alignItems: 'top', gap: '10px' }}>
+                <Replay />
+                <Typography variant="body2" >Partager</Typography>
+              </MenuItem >
+              <MenuItem onClick={handleClose} sx={{ display: 'flex', alignItems: 'top', gap: '10px' }}>
+                <DoNotDisturb />
+                <Typography variant="body2" >Pas intéressé(e)</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleClose} sx={{ display: 'flex', alignItems: 'top', gap: '10px' }}>
+                <DoNotDisturbOn />
+                <Typography variant="body2" >Ne pas recommander la chaine</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleClose} sx={{ display: 'flex', alignItems: 'top', gap: '10px' }}>
+                <OutlinedFlag />
+                <Typography variant="body2" >Signaler</Typography>
+              </MenuItem>
+              
+            </Menu>
         </Box>
       </CardContent>
     </Grid>
