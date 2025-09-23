@@ -20,7 +20,7 @@ const VideoCard = ({miniature, titre, description, auteur, durée, vues, date, .
 
 
   return (
-    <Grid size={{xs:12, sm:6, md:6, lg:4}} {...props}>
+    <Grid size={{xs:12, sm:6, md:4, lg:3}} {...props}>
       <CardMedia
         sx={{ width: "100%", aspectRatio: '16/9', borderRadius: "20px" }}
         image={miniature}
