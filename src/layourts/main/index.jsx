@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import NavBar from "../../components/NavBar";
-import { Box, CssBaseline, Grid, Typography, useTheme } from "@mui/material";
+import { Box, CssBaseline, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import SideBar from "../../components/SideBar";
 import TabFilter from "../../components/TabFilter";
 import VideoCard from "../../components/VideoCard";
@@ -22,6 +22,37 @@ const Main = () => {
     
 
     const theme = useTheme();
+
+    const isXs = useMediaQuery(theme.breakpoints.only('xs'))
+    const isSm = useMediaQuery(theme.breakpoints.only('sm'))
+    const isMd = useMediaQuery(theme.breakpoints.only('md'))
+    const isLg = useMediaQuery(theme.breakpoints.only('lg'))
+    const isXl = useMediaQuery(theme.breakpoints.only('xl'))
+
+    let nbrElShot = 2
+    let nbrElVideo = 0
+
+    if (isXs) {
+      nbrElShot = 2
+      nbrElVideo = 0
+    }
+    if (isSm) {
+      nbrElShot = 3
+      nbrElVideo = 2
+    }
+    if (isMd) {
+      nbrElShot = 5
+      nbrElVideo = 3
+    }
+    if (isLg) {
+      nbrElShot = 6
+      nbrElVideo = 4
+    }
+    if (isXl) {
+      nbrElShot = 6
+      nbrElVideo = 4
+    }
+
 
     const Videos = [
       {
@@ -291,7 +322,7 @@ const Main = () => {
                   {/* First section video card */}
                   <Box sx={{ mt: {xs: '64px', sm: '0px'} }}></Box>
                   <Grid container spacing={2} sx={{ mt: '64px', flexWrap: 'nowrap', display: {xs: 'none', sm: 'flex'} }}>
-                    {Videos.slice(0,2).map((video, index) => (
+                    {Videos.slice(0,nbrElVideo).map((video, index) => (
                       <VideoCard 
                         key={index}
                         miniature={video.miniature}
@@ -313,7 +344,7 @@ const Main = () => {
                     </Typography>
 
                     <Grid container spacing={2} sx={{ flexWrap: 'nowrap'}}>
-                      {Videos.slice(0,3).map((video, index) => (
+                      {Videos.slice(0,nbrElShot).map((video, index) => (
                         <ShotCard key={index} />
                       ))}
                     </Grid>
