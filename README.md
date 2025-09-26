@@ -1,4 +1,12 @@
-# React + Vite
+# youtube-clone
+
+- Design responsive de l’interface de YouTube, réalisé avec React Native et Material UI.
+Projet mettant en avant la création d’une interface moderne, adaptative et proche de l’expérience utilisateur réelle.
+
+- Responsive YouTube design clone built with React Native and Material UI.
+Showcases UI/UX skills with a modern, adaptive interface close to the real user experience.
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
