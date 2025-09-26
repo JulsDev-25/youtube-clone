@@ -397,7 +397,7 @@ const Shorts = [
                 <SideBar open={openDrawer} sideBarRef={sideBarRef} />
 
                 <Box component="main" sx={{ flexGrow: 1, px: 3, overflow: "hidden" }}>
-                  <Box sx={{width: {sm: `calc(100% - 48px)`, lg: `calc(100% - ${sideBarwidth}px - 48px)`}, position: 'fixed', top: '64px', backgroundColor: '#fffc', backdropFilter: 'blur(10px)'}} >
+                  <Box sx={{width: {xs: `calc(100% - 48px)`, lg: `calc(100% - ${sideBarwidth}px - 48px)`}, position: 'fixed', top: '64px', backgroundColor: '#fffe', backdropFilter: 'blur(10px)'}} >
                     <TabFilter />
                   </Box>
                   

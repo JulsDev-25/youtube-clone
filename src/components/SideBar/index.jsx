@@ -57,7 +57,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const SideBar = ({open, sideBarRef}) => {
 
   return (
-    <Drawer variant="permanent" ref={sideBarRef} open={open} sx={{ display: {xs : open ? 'block': 'none', lg: 'block'}, position: {sm: 'absolute', lg: 'sticky'}, top: '64px', pt:0, height: 'calc(100vh - 64px)' }}>
+    <Drawer variant="permanent" ref={sideBarRef} open={open} sx={{ display: {xs : open ? 'block': 'none', md: 'block'}, zIndex: 1, position: {xs: 'fixed', md: 'sticky'}, top: '64px', pt:0, height: 'calc(100vh - 64px)' }}>
       <List >
         {["Acceuil", "Shorts", "Abonnements", "Vous"].filter((item) => !(open && item === "Vous")).map(
           (text, index) => (
